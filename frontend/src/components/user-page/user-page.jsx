@@ -31,8 +31,8 @@ export const UserPage = ({ extraClass = "" }) => {
       getOwnWishes(),
     ]).then((values) => {
       const [wishes, profileInfo, myWishes] = values;
-      setAnotherUserWishes(wishes);
       setAnotherUser(profileInfo);
+      setAnotherUserWishes(wishes);
       setMyWishes(myWishes);
     });
   }, [username]);

@@ -82,6 +82,7 @@ export const ProfilePage = ({ extraClass = "" }) => {
         });
     }
   };
+
   return (
     <section className={`${styles.content} ${extraClass}`}>
       <h1 className={`text text_type_h1 text_color_primary ${styles.title}`}>

@@ -10,7 +10,6 @@ export const UserSupportedCard = ({
   date,
   extraClass = "",
 }) => {
-  console.log(amount)
   return (
     <article className={`${styles.content} ${extraClass}`}>
       <img className={styles.img} src={img} />

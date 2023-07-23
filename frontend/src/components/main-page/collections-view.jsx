@@ -79,7 +79,6 @@ export const CollectionsView = ({ url, ownWishes }) => {
               >
                 {card.name}
               </h3>
-              {console.log(user, card)}
               {user.id === card.owner?.id && (
                 <button
                   type="button"

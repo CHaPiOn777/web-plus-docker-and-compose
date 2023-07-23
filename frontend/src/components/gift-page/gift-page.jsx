@@ -18,8 +18,8 @@ export const GiftPage = ({ extraClass = "" }) => {
   const [currentSupportedBtn, setCurrentSupportedBtn] = useState(100);
   const [anotherSum, setAnotherSum] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
-  const [wishData, setWishData] = useState({});
 
+  const [wishData, setWishData] = useState({});
   useEffect(() => {
     if (sessionStorage.getItem("auth_token")) {
       Promise.all([getCard(id), getOwnWishes()]).then(([card, wishlist]) => {
@@ -30,7 +30,7 @@ export const GiftPage = ({ extraClass = "" }) => {
         }
       });
     }
-  }, []);
+  }, [id]);
 
   const isRaised = wishData.raised === wishData.price;
 
@@ -106,7 +106,6 @@ export const GiftPage = ({ extraClass = "" }) => {
             style={{ maxWidth: "75%" }}
           >{`Описание: ${wishData.description}`}</p>
           <LoadingBox
-
             current={wishData.raised}
             total={wishData.price}
             extraClass={styles.load}
@@ -142,7 +141,6 @@ export const GiftPage = ({ extraClass = "" }) => {
         <div className={styles.subtitle_box}>
           <h2 className="text text_ty-e_h2">Список поддержавших</h2>
         </div>
-        {console.log(wishData)}
         {wishData?.offers?.length ? (
           wishData?.offers?.map(({ name, amount, createdAt }) => (
             <UserSupportedCard name={name} amount={amount} date={createdAt} />

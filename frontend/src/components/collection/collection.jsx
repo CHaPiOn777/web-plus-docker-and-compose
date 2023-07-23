@@ -12,10 +12,10 @@ import styles from "./collection.module.css";
 export const Collection = ({ extraClass = "" }) => {
   const [user] = useContext(UserContext);
   const [data, setData] = useState({});
-  const [pagData, setPagData] = useState({});
+  // const [pagData, setPagData] = useState({});
 
   const { id } = useParams();
-  console.log(id)
+
   useEffect(() => {
     getCollection(id)
       .then((res) => setData(res))
@@ -30,8 +30,6 @@ export const Collection = ({ extraClass = "" }) => {
         </h2>
         <div className={styles.cards_box}>
           {data.items?.map((card) => {
-          {  console.log(card.id, data)}
-          
             return (
               <GoodCard
                 id={card.id}

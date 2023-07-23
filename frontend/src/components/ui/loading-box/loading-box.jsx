@@ -3,7 +3,6 @@ import React from "react";
 import styles from "./loading-box.module.css";
 
 export const LoadingBox = ({ current = 0, total = 1000, extraClass = "" }) => {
-  
   const loadingWidh = `${Math.ceil((current / total) * 100)}%`;
 
   return (
