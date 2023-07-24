@@ -13,13 +13,15 @@ services:
     networks:
       - frontend
 
-  postgres:
+  postgres1:
     container_name: postgres
     image: postgres:14-alpine
     restart: always
     env_file: ./backend/.env
     networks:
       - backend
+    volumes:
+      - postgres_data:/data/postgres
 
   adminer:
     image: adminer
@@ -27,7 +29,7 @@ services:
     ports:
       - "8080:8080"
     depends_on:
-      - postgres
+      - postgres1
     networks:
       - backend
 
@@ -40,10 +42,9 @@ services:
     ports:
       - "4000:5000"
     depends_on:
-      - postgres
+      - postgres1
     restart: always
-    volumes:
-      - postgres_data:/data/postgres
+    
     networks:
       - backend
 
