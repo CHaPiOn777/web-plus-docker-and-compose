@@ -13,7 +13,7 @@ services:
     networks:
       - frontend
 
-  postgres1:
+  postgres:
     container_name: postgres
     image: postgres:14-alpine
     restart: always
@@ -29,7 +29,7 @@ services:
     ports:
       - "8080:8080"
     depends_on:
-      - postgres1
+      - postgres
     networks:
       - backend
 
@@ -42,7 +42,7 @@ services:
     ports:
       - "4000:5000"
     depends_on:
-      - postgres1
+      - postgres
     restart: always
     
     networks:
