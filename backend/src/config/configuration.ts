@@ -5,9 +5,9 @@ export default () => ({
   database: {
     host: process.env.POSTGRES_HOST || 'localhost',
     port: parseInt(process.env.POSTGRES_PORT) || 5432,
-    nameDB: process.env.POSTGRES_DB || 'nest_project',
+    nameDB: process.env.POSTGRES_DB || 'postgres',
     password: process.env.POSTGRES_PASSWORD || 'postgres',
-    name: process.env.POSTGRES_username || 'postgres',
+    name: process.env.POSTGRES_USER || 'postgres',
   },
   jwt: {
     secret: process.env.SECRET || 'JWT_SECRET',
