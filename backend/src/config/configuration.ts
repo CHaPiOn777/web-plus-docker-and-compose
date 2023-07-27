@@ -5,12 +5,12 @@ export default () => ({
   database: {
     host: process.env.POSTGRES_HOST || 'localhost',
     port: parseInt(process.env.POSTGRES_PORT) || 5432,
-    nameDB: process.env.POSTGRES_DB || 'kpd',
-    password: process.env.POSTGRES_PASSWORD || 'student',
-    name: process.env.POSTGRES_USER || 'student',
+    nameDB: process.env.POSTGRES_DB || 'kpdvladislav',
+    password: process.env.POSTGRES_PASSWORD || 'password',
+    name: process.env.POSTGRES_USER || 'postgres',
   },
   jwt: {
     secret: process.env.SECRET || 'JWT_SECRET',
-    ttl: process.env.JWT_TTL || '30000s',
+    ttl: process.env.JWT_TTL || '1d',
   },
 });
